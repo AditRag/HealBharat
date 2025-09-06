@@ -1,0 +1,142 @@
+/* home.css - light/dark using CSS variables */
+* { box-sizing: border-box; }
+
+:root{
+  /* LIGHT theme variables */
+  --bg: #f7f7fb;
+  --text: #111827;
+  --header-bg: #333333;
+  --nav-bg: #444444;
+  --aside-bg: #f4f4f4;
+  --main-bg: transparent;
+  --box-bg: #eee;
+  --footer-bg: #333333;
+  --accent: #ffd700;
+  --toggle-bg: #111;
+  --toggle-color: #fff;
+  --link-color: #ffffff;
+}
+
+/* DARK theme variables override */
+body.dark {
+  --bg: #0f1724;         /* page background */
+  --text: #f8fafc;       /* main text */
+  --header-bg: #0b1220;
+  --nav-bg: #0f1724;
+  --aside-bg: #111827;
+  --main-bg: transparent;
+  --box-bg: #172033;
+  --footer-bg: #0b1220;
+  --toggle-bg: #f9fafb;
+  --toggle-color: #0b1220;
+  --link-color: #ffd700;
+}
+
+/* Page */
+body{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+/* Toggle button (top-right) */
+#themeToggle{
+  position: fixed;
+  top: 78px;
+  right: 12px;
+  z-index: 999;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+  cursor: pointer;
+  font-size: .95rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.15);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Header / Nav */
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--header-bg);
+  color: var(--link-color);
+  padding: 10px 30px;
+  transition: background 0.25s ease;
+}
+
+.logo { height: 40px; }
+
+.header-right img { width: 54px; margin-left: 10px; filter: none; }
+
+/* Nav */
+nav {
+  background: var(--nav-bg);
+  padding: 10px 30px;
+  display: flex;
+  gap: 20px;
+  transition: background 0.25s ease;
+}
+
+nav a { color: var(--link-color); text-decoration: none; font-weight: bold; }
+nav a:hover { color: var(--accent); }
+
+/* Layout */
+.container {
+  display: flex;
+  min-height: 400px;
+}
+
+aside {
+  width: 240px;
+  background: var(--aside-bg);
+  padding: 20px;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  transition: background 0.25s ease;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  background: var(--main-bg);
+}
+
+/* Boxes / cards */
+.boxes { display:flex; gap: 20px; }
+.box {
+  background: var(--box-bg);
+  padding: 15px;
+  border-radius: 8px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(2,6,23,0.06);
+  transition: background 0.25s ease;
+}
+
+/* Footer */
+footer{
+  background: var(--footer-bg);
+  color: var(--link-color); 
+  text-align: center;
+  padding: 15px;
+  margin-top: 24px;
+}
+
+/* Utility / responsiveness tweaks */
+#about-hashedbit { opacity: .85; }
+#logo-footer { height: 50px; width: 50px; }
+#Profile_pic { margin-right: 20px; display: inline; border-radius: 6px; }
+
+#Bio { max-width: 720px; line-height: 1.5; }
+
+/* Small screens */
+@media screen and (max-width: 700px){
+  .container { flex-direction: column; }
+  aside { width: 100%; border-right: none; }
+  nav { flex-wrap: wrap; }
+  #themeToggle { top: 8px; right: 8px; padding: 7px 10px; }
+}

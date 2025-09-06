@@ -1,0 +1,130 @@
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 24px;
+  background: #f7f7fb;
+  color: #111;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+.card {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .card {
+  background: #374151;
+  color: #f9fafb;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+body.dark input,
+body.dark textarea {
+  background: #4b5563;
+  color: #f9fafb;
+  border-color: #6b7280;
+}
+
+button {
+  background: #4f46e5;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+.theme-toggle-container {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.theme-btn {
+  background: #111827;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+
+body.dark .theme-btn {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.message {
+  margin-top: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: .95rem;
+}
+
+.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.home-btn-container {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.home-btn {
+  display: inline-block;
+  background: #10b981;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.home-btn:hover {
+  background: #059669;
+}
